@@ -1,0 +1,30 @@
+{% extends 'admin_nav.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-12 text-center">
+    <h2 class="page-title color--white">Career Details</h2>
+    <ul class="breadcrumb">
+     <li><a href="{% url 'home' %}">Home</a></li>
+     <li><a href="{% url 'about' %}">About</a><span></span></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="container m-4 ">
+<h2 class="page-title ">Career Details</h2>
+
+<p><h6>Id : </h6>{{ user.id }}</P>
+<p><h6>Job Title:</h6> {{ user.job_title }}</p>
+<p><h6>Username:</h6>{{user.date}}</p>
+<p><h6>Jobh6 Title:</h6> {{user.experience}}</p>
+<p><h6>Job Title:</h6>{{user.qualification}}</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="page-title color--white">Devops</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><span>Services</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+
+        <!-- Main Wrapper Start -->
+        <main class="main-content-wrapper">
+            <div class="blog-area pt--100 pt-lg--80 pt-md--70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 ml-auto order-lg-2 mb-md--70">
+                            <!-- Blog Post Start -->
+                            <div class="blog-post mb--30">
+                                <div class="inner">
+                                    <div class="post-info">                                        
+                                        <div class="post-header">
+                                            <h1 class="post-title">Devops</h1>
+                                        </div>
+                                        <div class="post-content">	
+											<p><span class="dropcap">D</span>evOps is a set of practices that combines software development (Dev) and IT operations (Ops) to enable organizations to deliver applications and services more rapidly, reliably, and efficiently. It focuses on breaking down silos between development and operations teams, fostering collaboration, and automating processes to achieve faster and more frequent software releases with higher quality.</p>
+											</p>
+											<p>DevOps emphasizes the following key principles and practices:</p>
+											
+											<div class="post-thumbnail format-image">
+												<img src="{% static 'assets/img/services/27.jpg' %}" alt="It Services">
+											</div>
+											
+											<p><b>Continuous Integration and Continuous Deployment (CI/CD):</b> DevOps promotes the use of automated build, test, and deployment processes to enable frequent and reliable software releases. Continuous Integration involves merging code changes into a shared repository and running automated tests to ensure code quality. Continuous Deployment automates the release of code changes into production environments.</p>
+
+											<p><b>Infrastructure as Code (IaC):</b> Infrastructure as Code treats infrastructure provisioning, configuration, and management as software development tasks. It involves using declarative or scripted configurations to define and provision infrastructure resources such as servers, networks, and storage. This approach ensures consistent and reproducible infrastructure deployments and enables version control and automation.</p>
+
+											<p><b>Automation:</b> DevOps aims to automate manual and repetitive tasks to improve efficiency and reduce errors. This includes automating build processes, testing, deployment, configuration management, and monitoring. Automation helps streamline workflows, enables faster feedback loops, and reduces human errors.</p>
+
+											<p><b>Collaboration and Communication:</b> DevOps fosters collaboration and effective communication between development, operations, and other teams involved in the software delivery lifecycle. This includes shared goals, cross-functional teams, and frequent feedback and knowledge sharing. Collaboration tools, shared dashboards, and agile methodologies like Scrum or Kanban support effective teamwork.</p>
+
+											<p><b>Monitoring and Feedback:</b> DevOps encourages continuous monitoring of applications and infrastructure to gain insights into performance, availability, and user experience. Monitoring tools provide real-time data and metrics, enabling proactive identification and resolution of issues. Feedback loops help drive continuous improvement by using insights to optimize processes and deliver better software.</p>
+
+											<p><b>Security and Compliance:</b> DevOps emphasizes integrating security practices throughout the software delivery lifecycle. This includes conducting security assessments, implementing secure coding practices, automating security checks, and adhering to compliance requirements. Security is considered an integral part of the development and operations process, rather than an afterthought.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 order-lg-1">
+                            <div class="sidebar-wrap">
+                                <div class="sidebar-widget widget-border">
+                                    <h4 class="widget-title">Our Services</h4>
+                                    <div class="sidebar-widget-link">
+                                        <ul>
+											<li><a href="product-engineer.html">Product Engineer</a></li>
+                                            <li><a href="servicenow.html">ServiceNow</a></li>
+                                            <li><a href="atlassian.html">Atlassian</a></li>
+                                            <li><a href="dynamic-three.html">Dynamics 365</a></li>
+                                            <li><a href="power-apps.html">Power Apps</a></li>
+                                            <li><a href="amazon-web-services.html">Amazon Web Services</a></li>
+                                            <li><a href="azure.html">Azure</a></li>
+                                            <li><a href="devops.html">Devops</a></li>
+                                            
+                                            
+                                            
+                                            
+                                            <li><a href="recruitments.html">Recruitments</a></li>
+                                            <li><a href="work-day.html">Work Day</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Main Wrapper End -->
+
+{% endblock %}

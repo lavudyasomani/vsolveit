@@ -1,0 +1,97 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-12 text-center">
+    <h2 class="page-title color--white">Job Application Form</h2>
+    <ul class="breadcrumb">
+     <li><a href="{% url 'home' %}">Home</a></li>
+     <li><a href="{% url 'about' %}">About</a><span></span></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+<div class="container py-5">
+ <div class="row justify-content-center">
+  <div class="col-md-6 bg-light">
+   <h1 class="text-center text-white py-5"><b>Job Application Form</b></h1>
+   <form method="POST" action="{% url 'job_application' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="row mb-3">
+     <div class="col-md-6">
+      <label for="username" class="form-label">Username:</label>
+      <input type="text" class="form-control" name="username" placeholder="Enter username" id="username"
+       aria-describedby="username">
+     </div>
+
+     <div class="col-md-6">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" name="email" placeholder="example@gmail.com" id="email"
+       aria-describedby="emailHelp">
+     </div>
+    </div>
+
+    <div class="row mb-3">
+     <div class="col-md-6">
+      <label for="phone_number" class="form-label">Phone Number:</label>
+      <input type="text" class="form-control" name="phone_number" placeholder="Phone number" id="phone_number"
+       aria-describedby="emailHelp">
+     </div>
+
+     <div class="col-md-6">
+      <label for="date" class="form-label">Date:</label>
+      <input type="date" class="form-control" name="date" id="date">
+     </div>
+    </div>
+
+    <div class="row mb-3">
+     <div class="col-md-6">
+      <label for="address1" class="form-label">Address 1:</label>
+      <input type="text" class="form-control" name="address1" placeholder="Address 1" id="address1">
+     </div>
+
+     <div class="col-md-6">
+      <label for="address2" class="form-label">Address 2:</label>
+      <input type="text" class="form-control" name="address2" placeholder="Address 2" id="address2">
+     </div>
+    </div>
+
+    <div class="row mb-3">
+     <div class="col-md-6">
+      <label for="image" class="form-label">Image:</label>
+      <input type="file" class="form-control" name="image" id="image">
+     </div>
+
+     <div class="col-md-6">
+      <div class="custom-control text-dark custom-radio custom-control-inline m-4 p-4">
+       <input type="radio" id="customRadioInline1" name="gender" value="Male" class="custom-control-input">
+       <label class="custom-control-label text-white" for="customRadioInline1">Male</label>
+
+       <input type="radio" id="customRadioInline2" name="gender" value="Female" class="custom-control-input m-4 p-4 ">
+       <label class="custom-control-label text-white" for="customRadioInline2">Female</label>
+      </div>
+     </div>
+    </div>
+
+    <div class="text-center py-5">
+     <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+
+   </form>
+  </div>
+ </div>
+</div>
+
+
+{% endblock %}

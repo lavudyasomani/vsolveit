@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="page-title color--white">About</h2>
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a><span></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Wrapper Start -->
+<main class="main-content-wrapper">
+    <!-- About Area Start -->
+    <section class="about-area">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <div class="about-section">
+                        <div class=" about__content pt-5">
+                            <h2 class="about__title">About Us</h2>
+                            <div class="about__text mb--30">
+                                <p>
+                                    At Vsolve IT, we are a leading provider of software development, IT outsourcing, and
+                                    IT consulting services. With a passion for innovation and a commitment to
+                                    excellence, we help businesses harness the power of technology to drive growth,
+                                    streamline operations, and stay ahead of the competition. Our team consists of
+                                    highly skilled professionals with extensive experience in the software development
+                                    and IT industry. We bring together a diverse range of expertise, including software
+                                    engineers, project managers, consultants, and support specialists, to deliver
+                                    comprehensive solutions that meet the unique needs of our clients.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 pt-5">
+                    <img src="{% static 'assets/img/bg/about-image.png' %}">
+                </div>
+            </div>
+            <div class="about-section">
+                <div class=" about__content">
+                    <h2 class="about__title">Why Choose Us?</h2>
+                    <div class="about__text mb--30">
+                        <p>
+                            <b>Expertise:</b> Our team comprises highly skilled professionals with in-depth knowledge of
+                            software development, IT outsourcing, and IT consulting. We stay up to date with the latest
+                            industry trends and best practices to deliver innovative and effective solutions.<br>
+                            <b>Client-Centric Approach:</b> We believe in building strong and lasting relationships with
+                            our clients. We prioritize clear communication, transparency, and collaboration to ensure
+                            that your unique requirements are met and expectations exceeded.<br>
+                            <b>Expertise:</b> Our team comprises highly skilled professionals with in-depth knowledge of
+                            software development, IT outsourcing, and IT consulting. We stay up to date with the latest
+                            industry trends and best practices to deliver innovative and effective solutions.<br>
+                            <b>Client-Centric Approach:</b> We believe in building strong and lasting relationships with
+                            our clients. We prioritize clear communication, transparency, and collaboration to ensure
+                            that your unique requirements are met and expectations exceeded.<br>
+                            <b>Quality and Timeliness:</b> We are committed to delivering high-quality solutions within
+                            agreed timelines. Our rigorous quality assurance processes and efficient project management
+                            ensure that your projects are completed to the highest standards.<br>
+                            <b>Flexibility:</b> We understand that businesses have different needs. Our services are
+                            flexible and scalable, allowing us to adapt to your evolving requirements and support your
+                            growth.<br>
+                            <b>Confidentiality and Security:</b> We take the security and confidentiality of your data
+                            seriously. We adhere to strict data protection practices and implement robust security
+                            measures to safeguard your information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container border">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true">Mission</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Vision</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Core Values</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent" style="margin: 20px 20px 20px 20px;">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p class="p">Our mission at Vsolve IT is to empower businesses with innovative
+                                    technology solutions that drive growth, efficiency, and success. We strive to
+                                    understand our clients' unique needs, challenges, and goals, and tailor our services
+                                    to deliver impactful results. Through our software development, IT outsourcing, and
+                                    IT consulting services, we aim to be a trusted partner, providing reliable,
+                                    scalable, and cutting-edge solutions that enable businesses to thrive in an
+                                    ever-evolving digital landscape.</p>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="{% static 'assets/img/bg/mission.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p class="p">Our vision is to be a leading global provider of software development, IT
+                                    outsourcing, and IT consulting services, recognized for our technical expertise,
+                                    customer-centric approach, and unwavering commitment to excellence. We aspire to be
+                                    at the forefront of technological innovation, leveraging emerging trends and
+                                    disruptive technologies to deliver transformative solutions that propel our clients'
+                                    businesses forward. We strive to foster long-term partnerships based on trust,
+                                    collaboration, and shared success, enabling us to be the preferred choice for
+                                    businesses seeking exceptional technology solutions.</p>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="{% static 'assets/img/bg/vission.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p><b>Excellence:</b> We are committed to delivering excellence in everything we do. We
+                                    strive for continuous improvement, staying abreast of the latest technologies, and
+                                    leveraging industry best practices to provide exceptional solutions and
+                                    services.<br>
+                                    <b>Client Focus:</b> Our clients are at the heart of everything we do. We listen,
+                                    understand, and prioritize their needs, ensuring that we exceed their expectations
+                                    by delivering tailored solutions that address their specific challenges and drive
+                                    their success.<br>
+                                    <b>Innovation:</b> We embrace innovation as a driving force for growth. We encourage
+                                    creativity, exploration, and out-of-the-box thinking, leveraging emerging
+                                    technologies and trends to develop groundbreaking solutions that enable our clients
+                                    to stay ahead of the competition.<br>
+                                    <b>Collaboration:</b> We believe in the power of collaboration. By fostering a
+                                    culture of teamwork and open communication, we work hand-in-hand with our clients,
+                                    partners, and internal teams to build strong relationships, share knowledge, and
+                                    collectively achieve remarkable results.<br>
+                                    <b>Integrity:</b> We uphold the highest ethical standards, treating our clients,
+                                    employees, and stakeholders with honesty, respect, and transparency. We maintain
+                                    strict data protection practices and prioritize the confidentiality and security of
+                                    our clients' information.<br>
+                                    <b>Sustainability:</b> We are committed to sustainable business practices. We strive
+                                    to minimize our environmental impact, promote diversity and inclusion, and
+                                    contribute positively to the communities in which we operate.
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="{% static 'assets/img/bg/value.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+        </div>
+    </section>
+</main>
+<!-- Main Wrapper End -->
+
+
+{% endblock %}

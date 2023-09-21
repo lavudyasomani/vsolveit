@@ -1,0 +1,43 @@
+
+{% extends 'admin_nav.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-12 text-center">
+            <h2 class="page-title color--white">Delete User</h2>
+            <ul class="breadcrumb">
+               <li><a href="{% url 'home' %}">Home</a></li>
+               <li><a href="{% url 'about' %}">About</a><span></span></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+
+.<div class="container-fluid bg-light py-5">
+  <div class="row justify-content-center py-5">
+   <h1 class="text-center py-2"><b>Delete User</b></h1>
+    <div class="col-md-4 py-5">
+    <div class="card py-5">
+   <div class="alert alert-danger " role="alert">
+      <h4><b>Are you sure you wants to delete...!</b></h4>
+   </div><br><br>
+   <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-group py-3 text-center">
+         <button type="submit" class="btn btn-danger ">Delete</button>
+         <a href="{% url 'show_user_data' %}" class="btn btn-secondary">Cancel</a>
+      </div>
+   
+   </form>
+   <br><br>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!-- mini banner Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-12 text-center">
+    <h2 class="page-title color--white">Job Notifications</h2>
+    <ul class="breadcrumb">
+     <li><a href="{% url 'home' %}">Home</a></li>
+     <li><a href="{% url 'about' %}">About</a><span></span></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!---------------mini banner end------------------------->
+
+
+<div class="container">
+
+<h1 class="text-center py-5">Please send your resume to info@vsolveit.io and one of our recruiters will contact you</h1>
+<hr>
+{% for i in career %}
+
+<ul>
+ <li><span class="job-title">Job Title : </span> <span>{{i.job_title}}</span></li>
+ <li>Experience : {{i.experience}}</li>
+ <li>Qualification : {{i.qualification}}</li>
+ <li>Date : {{i.date}}</li>
+ <div class="text-end">
+
+  <button type="submit" class="btn btn-primary m-3 p-3  text-center"><a href="{% url 'job_application' %}">Apply now</a></button>
+ </div>
+</ul>
+<hr>
+{% endfor %}
+
+
+
+
+
+{% endblock %}
+</div>

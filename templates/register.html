@@ -1,0 +1,61 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="page-title color--white">Add Register Form</h2>
+        <ul class="breadcrumb">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a><span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------mini banner end --------------------->
+
+<div class="container text-light py-5">
+  <div class="row justify-content-center">
+    <h1 class="text-center mt-3 pt-3 mb-4 pb-4"><b>Registration Form</b></h1>
+    <div class="col-md-4 bg-light">
+      <form method="post">
+        {% csrf_token %}
+        <div class="mb-1 mt-5">
+          <label for="username" class="form-label">User Name</label>
+          <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+        </div>
+        <div class="mb-1">
+          <label for="phone_number" class="form-label">Phone Number</label>
+          <input type="number" class="form-control" name="phone_number" placeholder="Phone Number" id="phone_number">
+        </div>
+        <div class="mb-1">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" placeholder="Email address" id="email"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-1">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password" id="password">
+        </div>
+        <div class="mb-1">
+          <label for="confirm_password" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+            id="confirm_password">
+        </div>
+        
+       <div class="text-center">
+        <button type="submit" class="btn btn-primary m-3 p-3  text-center">Submit</button>
+      </form>
+      <p class=" text-center mt-0 pt-0 mb-3 pb-3">If you have an account? <a href="{% url 'login' %}"
+          class="text-danger"><b>Login</b></a></p>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

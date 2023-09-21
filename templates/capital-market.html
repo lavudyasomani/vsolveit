@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="page-title color--white">Capital Market</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><span>Industries</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+
+        <!-- Main Wrapper Start -->
+        <main class="main-content-wrapper">
+            <div class="blog-area pt--100 pt-lg--80 pt-md--70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 ml-auto order-lg-2 mb-md--70">
+                            <!-- Blog Post Start -->
+                            <div class="blog-post mb--30">
+                                <div class="inner">
+                                    <div class="post-info">                                        
+                                        <div class="post-header">
+                                            <h1 class="post-title">Capital Market</h1>
+                                        </div>
+                                        <div class="post-content">	
+											<p><span class="dropcap">A</span>ccelerate growth in the capital market industry with our specialized IT consulting services. We offer tailored solutions for digital transformation, regulatory compliance, and advanced data analytics. Stay ahead of the competition with our industry expertise and technology-driven strategies.</p>
+											
+											<div class="post-thumbnail format-image">
+												<img src="{% static 'assets/img/services/17.jpg' %}" alt="It Services">
+											</div>
+											
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 order-lg-1">
+                            <div class="sidebar-wrap">
+                                <div class="sidebar-widget widget-border">
+                                    <h4 class="widget-title">Our Industries</h4>
+                                    <div class="sidebar-widget-link">
+                                        <ul>
+											<li><a href="airlines.html">Airlines</a></li>
+											<li><a href="banking.html">Banking</a></li>
+											<li><a href="communications.html">Communications</a></li>
+											<li><a href="energy-and-utilities.html">Energy and Utilities (E&U)</a></li>
+											<li><a href="financial-services.html">Financial Services</a></li>
+                                            <li><a href="healthcare-life-sciences.html">Healthcare & Life Sciences</a></li>
+                                            <li><a href="insurance.html">Insurance</a></li>
+                                            <li><a href="logistics.html">Logistics</a></li>
+                                            <li><a href="manufacturing.html">Manufacturing</a></li>
+                                            <li><a href="media-&-entertainment.html">Media & Entertainment</a></li>
+                                            <li><a href="telecom.html">Telecom</a></li>
+                                            <li><a href="retail-and-ecommerce.html">Retail and Ecommerce</a></li>
+                                            <li><a href="travel-&-hospitality.html">Travel & Hospitality</a></li>
+                                            <li><a href="capital-market.html">Capital Market</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Main Wrapper End -->
+
+{% endblock %}

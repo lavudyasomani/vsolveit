@@ -1,0 +1,68 @@
+{% extends 'admin_nav.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="page-title color--white">Careers</h2>
+        <ul class="breadcrumb">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a><span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-3">
+<table class="table table-hover">
+  <thead>
+    <div class="row">
+      <div class="col-auto me-auto"></div>
+      <div class="col-auto">
+        <a href="{% url 'create_user' %}"><b><img src="{% static 'assets/img/icons/plus.png' %}" class="m-2" width="11px" height="11px" alt="eye">Add</b></a>
+      
+      </div>
+    </div>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Job_Title</th>
+      <th scope="col">Date</th>
+      <th scope="col">Experience</th>
+      <th scope="col">Qualification</th>
+      <th scope="col">Applicants</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in user_data %}
+    <tr>
+      
+      <td>{{user.id}}</td>
+      <td>{{user.job_title}}</td>
+      <td>{{user.date}}</td>
+      <td>{{user.experience}}</td>
+    <td>{{user.qualification}}</td>
+    
+    <td>
+      <a href="{% url 'user_detail' user.id %}"><img src="{% static 'assets/img/icons/eye.png' %}" class="m-2" width="14px" height="14px" alt="eye"></a>
+      
+      <a href="/update_user/{{user.id}}"><img src="{% static 'assets/img/icons/edit.png' %}" class="m-2 " width="14px" height="14px" alt="edit"></a>
+            
+      <a href="/delete_user/{{user.id}}"><img src="{% static 'assets/img/icons/delete.png' %}" class="m-2" width="14px" height="14px"  alt="delete"></a>
+            
+    <td>
+      <a href="{% url 'Applicants' %}" class="text-decoration-none "><img src="{% static 'assets/img/icons/menu.png' %}" class="m-2"width="14px" height="14px" alt="menu">Applicants</a>
+    </td>
+            
+    </td>
+               
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+</div>

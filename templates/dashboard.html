@@ -1,0 +1,63 @@
+{% extends 'admin_nav.html' %}
+{% block content %}
+{% load static %}
+
+ 
+   <div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+    <div class="container-fluid">
+     <div class="row">
+      <div class="col-12 text-center">
+       <h2 class="page-title color--white">Dash Board</h2>
+       <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a><span></span></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  </main>
+
+<!------------------------------dashboard--------------------------->
+
+<div class="container py-3">
+  <table class="table table-hover">
+    <thead>
+      <div class="row">
+        
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone No</th>
+        <th scope="col">Date</th>
+        <th scope="col">Address1</th>
+        <th scope="col">Address1</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Resume</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for job_form  in job_form_data %}
+      <tr>
+
+        <td>{{job_form.id}}</td>
+        <td>{{job_form.username}}</td>
+        <td>{{job_form.email}}</td>
+        <td>{{job_form.phone_number}}</td>
+        <td>{{job_form.date}}</td>
+        <td>{{job_form.address1}}</td>
+        <td>{{job_form.address2}}</td>
+        <td>{{job_form.gender}}</td>
+        <td>
+          <a href="{% url 'generate_pdf' job_form.id %}" download="job_application.pdf">Download PDF</a>
+        </td> 
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+</div>
+

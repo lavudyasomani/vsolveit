@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="page-title color--white">Career</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><span>Career</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+
+        <!-- Main Wrapper Start -->
+        <main class="main-content-wrapper">
+            <!-- About Area Start -->
+            <section class="about-area">
+                <div class="container-fluid p-0">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="about-section">
+                                <div class=" about__content">
+                                    <h2 class="about__title">Career</h2>
+                                    <div class="about__text mb--30">
+                                        <p>
+										At Vsolve IT, we believe that our greatest asset is our talented and passionate team. We are always looking for exceptional individuals to join us on our journey of innovation and growth. If you are seeking a rewarding and challenging career in the technology industry, you've come to the right place.</p>
+										<p>We foster a culture of collaboration, continuous learning, and personal development. We value diversity, creativity, and a strong work ethic. Joining our team means being part of a dynamic and supportive environment where you can unleash your potential and make a meaningful impact.</p>
+										<p>We offer exciting opportunities in areas such as software development, IT consulting, project management, sales, marketing, and more. Whether you are a seasoned professional or just starting your career, we provide the resources and support to help you thrive and grow.							
+										</p>
+                                    </div>
+									
+                                <!-- <h2 class="about__title">SHORT HISTORY</h2> -->
+								 <div class="about__text mb--30">
+                                <!-- <p>Vsolve IT  is a firm that provides professional services to the companies and individuals. Our firm provides consulting and outsourcing services through our planning, As the economy moves up the value chain, finding high caliber, fitting talent is and will continue to be incredibly time consuming and complex. This is where many companies – from large multinationals to high-potential start-ups, from homegrown conglomerates to SMEs - turn to MAGMA in helping them find the right talent. Our international reach helps us stand out as a top global executive search firm.</p>									 -->
+								</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 bg-image bg-md-padding"
+                            data-bgimage="{% static 'assets/img/services/18.jpg' %}">
+						</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Main Wrapper End -->
+
+    {% endblock %}

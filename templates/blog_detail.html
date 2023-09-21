@@ -1,0 +1,37 @@
+{% extends 'admin_nav.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-12 text-center">
+    <h2 class="page-title color--white">Blog Details</h2>
+    <ul class="breadcrumb">
+     <li><a href="{% url 'home' %}">Home</a></li>
+     <li><a href="{% url 'about' %}">About</a><span></span></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="container m-4 ">
+ <h2 class="page-title ">Blog Details</h2>
+
+ 
+<p><h6>Id : </h6>{{ blog.id }}</P>
+ 
+<p><h6>Title:</h6> {{ blog.title }}</p>
+ 
+<p><h6>content:</h6> {{ blog.content }}</p>
+ 
+ <h2>blog image:</h2>
+  <td>
+   <img src="{{blog.image.url}}" width="120px" height="90px" alt="blog-img">
+  </td>
+ 
+</div>
+
+{% endblock %}

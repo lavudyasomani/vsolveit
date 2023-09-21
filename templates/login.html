@@ -1,0 +1,55 @@
+{% extends 'base2.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="page-title color--white">Login Form</h2>
+        <ul class="breadcrumb">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a><span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-----------------------------banner end -------------------->
+<br>
+<div class="container-fluid py-0">
+  <div class="row" align="center">
+    {% for message in messages %}
+    <div class="alert alert-danger {{ message.tags }} alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}  
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="col-md-4 bg-light m-5 p-5">
+        <h1 class="text-center text-white py-4"><b>Login Form</b></h1>
+        <div class="mb-3">
+          <label for="username" class="form-label text-left">User Name</label>
+          <input type="text" class="form-control" id="username" name="username"
+            placeholder="username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password" placeholder="Enter password" class="form-control"
+            id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary m-3 p-3">login</button>
+        <p class="text-dark text-center text-white py-2">If you don't have an account, <b><a href="{% url 'register' %}"
+              class="text-danger">Register</a></b></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

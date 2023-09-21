@@ -1,0 +1,64 @@
+{% extends 'admin_nav.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area bg-image" data-bgimage="{% static 'assets/img/bg/page-banner.jpg' %}">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-12 text-center">
+            <h2 class="page-title color--white">Edit Career Details</h2>
+            <ul class="breadcrumb">
+               <li><a href="{% url 'home' %}">Home</a></li>
+               <li><a href="{% url 'about' %}">About</a><span></span></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+
+   <div class="container-fluid py-5 ">
+      <div class="row justify-content-md-center">
+         
+         <div class="col-md-4 bg-light">
+            <h1 class="text-center mt-5"><b>Edit Career Details</b></h1>
+            <form method="POST" action="#">
+               {% csrf_token %}
+
+               
+
+               <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Job Title:</label>
+                  <input type="text" class="form-control" name="job_title" placeholder="user job title"
+                     id="exampleInputEmail1" aria-describedby="emailHelp">
+               </div>
+
+               <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Date: </label>
+                  <input type="date" class="form-control" name="date" placeholder="user date" id="exampleInputEmail1"
+                     aria-describedby="emailHelp">
+               </div>
+
+               <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Experience:</label>
+                  <input type="text" class="form-control" name="experience" placeholder="user experience"
+                     id="exampleInputPassword1">
+               </div>
+
+               <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Qualifications:</label>
+                  <input type="text" class="form-control" name="qualification" placeholder="user qualification"
+                     id="exampleInputPassword1">
+               </div>
+
+               <div class="text-center">
+                  <button type="submit" class="btn btn-success ">Update</button>
+               </div><br>
+
+            </form>
+
+         </div>
+      </div>
+   </div>
+
+{% endblock %}
