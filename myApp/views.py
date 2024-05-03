@@ -21,7 +21,7 @@ from django.http import FileResponse
 
 # Create your views here.
 
-#@login_required
+'''
 def Home(request):
     return render(request, 'index.html')
 def About(request):
@@ -387,8 +387,57 @@ def generate_pdf(job_application):
 
 def generate_pdf_view(request, id):
     job_application = get_object_or_404(Job_Application, id=id)
-    return generate_pdf(job_application)
+    return generate_pdf(job_application)'''
 
 
 def Success_Page(request):
     return render(request, 'success_page.html')
+
+
+
+
+#new views code 
+from django.shortcuts import render, redirect
+from .forms import GovtEventForm
+from django.shortcuts import render, get_object_or_404, redirect
+
+
+def event_list(request):
+    events = GovtEvent.objects.all()
+    return render(request, 'govt_event/event_list.html', {'events': events})
+
+
+# views.py
+from django.shortcuts import render, redirect
+from .forms import GovtEventForm
+
+def create_event(request):
+    if request.method == 'POST':
+        form = GovtEventForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('event_list')
+        else:
+            print(form.errors)
+    else:
+        form = GovtEventForm()
+
+    return render(request, 'govt_event/create_event.html', {'form': form})
+
+def edit_event(request, event_id):
+    event = get_object_or_404(GovtEvent, pk=event_id)
+    
+    if request.method == 'POST':
+        form = GovtEventForm(request.POST, instance=event)
+        if form.is_valid():
+            form.save()
+            return redirect('event_list')  # Redirect to the event list page
+    else:
+        form = GovtEventForm(instance=event)
+
+    return render(request, 'govt_event/edit_event.html', {'form': form, 'event': event})
+
+def delete_event(request, event_id):
+    event = get_object_or_404(GovtEvent, pk=event_id)
+    event.delete()
+    return redirect('event_list')  

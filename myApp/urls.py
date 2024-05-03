@@ -1,7 +1,34 @@
 from django.urls import path
 from myApp.views import *
 from django.contrib.admin.views.decorators import staff_member_required
+
+
+# urls.py
+from django.urls import path
+from .views import event_list, create_event, edit_event, delete_event
+
 urlpatterns = [
+    
+   
+    path('events/', event_list, name='event_list'),
+    path('', create_event, name='create_event'),
+    path('events/<int:event_id>/edit/', edit_event, name='edit_event'),
+    path('events/<int:event_id>/delete/', delete_event, name='delete_event'),
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''urlpatterns = [
    
     path('', Home, name='home'),
     path('login/', user_login, name='login'),
@@ -70,4 +97,4 @@ urlpatterns = [
     path('blog_detail/<int:user_id>/', Blog_Detail, name='blog_detail')
     
 ]
-     
+     '''

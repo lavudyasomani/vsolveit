@@ -3,6 +3,6 @@ from myApp.models import *
 # Register your models here.
 
 
-admin.site.register(Job_Application)
-admin.site.register(Career)
-admin.site.register(Blog)
+admin.site.register(ParliamentCategory)
+admin.site.register(AssemblyCategory)
+admin.site.register(GovtEvent)

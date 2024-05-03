@@ -1,38 +1,28 @@
+# models.py
 from django.db import models
 
-#add users
-class Career(models.Model):
-    
-    job_title = models.CharField(max_length=100, null=True)
+class ParliamentCategory(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    def __str__(self):
+        return str(self.name)
+
+class AssemblyCategory(models.Model):
+    name = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return str(self.name)
+
+
+class GovtEvent(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    parliament = models.ForeignKey(ParliamentCategory, on_delete=models.CASCADE)
+    assembly = models.ForeignKey(AssemblyCategory, on_delete=models.CASCADE)
+    venue = models.CharField(max_length=100, null=True)
+    pre_event_image = models.ImageField(upload_to='images')
+    mid_event_image = models.ImageField(upload_to='images')
+    post_event_image = models.ImageField(upload_to='images')
+    phone = models.CharField(max_length=10)
     date = models.DateField()
-    experience = models.CharField(max_length=100, null=True)
-    qualification = models.CharField(max_length=100, null=True)
-    
-    
-    def __str__(self):
-            return self.job_title
-#add blogs
-class Blog(models.Model):
-    title = models.CharField(max_length=100, null=True)
-    content = models.TextField()
-    image = models.ImageField(upload_to="img/")
-    
-    def __str__(self):
-            return self.title
-        
-
-class Job_Application(models.Model):
-    username = models.CharField(max_length=100, null=True)
-    email = models.EmailField(max_length=100, null=True)
-    phone_number = models.IntegerField(null=True)  
-    date = models.DateField(auto_now=True, null=True) 
-    address1 = models.TextField(max_length=300, null=True)  
-    address2 = models.TextField(max_length=300, null=True) 
-    pdf_file = models.FileField(upload_to='pdfs/')
-    gender = models.CharField(max_length=10, null=True)
 
     def __str__(self):
-        return str(self.username)
-
-        
-    
+        return str(self.name)

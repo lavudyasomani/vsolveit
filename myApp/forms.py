@@ -1,30 +1,56 @@
 from django import forms
 from myApp.models import *
 from django.contrib.auth.forms import AuthenticationForm
-from .models import Job_Application
+from myApp.models import *
 
+
+
+# forms.py
+from django import forms
+from .models import GovtEvent
+
+class GovtEventForm(forms.ModelForm):
+    class Meta:
+        model = GovtEvent
+        exclude = []  # Exclude all fields, as we are using widgets directly
+        widgets = {
+            'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Name'}),
+            'parliament': forms.Select(attrs={'class': 'form-control'}),
+            'assembly': forms.Select(attrs={'class': 'form-control'}),
+            'venue': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Venue'}),
+            'pre_event_image': forms.FileInput(attrs={'class': 'form-control'}),
+            'mid_event_image': forms.FileInput(attrs={'class': 'form-control'}),
+            'post_event_image': forms.FileInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone'}),
+            'image': forms.FileInput(attrs={'class': 'form-control'}),
+        }
+
+
+
+
+
+'''class GovtEventForm(forms.ModelForm):
+    class Meta:
+        model = GovtEvent
+        fields = '__all__' 
+        widgets = {
+            'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Name'}),
+            'parliament': forms.Select(attrs={'class': 'form-control'}),
+            'assembly': forms.Select(attrs={'class': 'form-control'}),
+            'venue': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Venue'}),
+            'pre_event_image': forms.FileInput(attrs={'class': 'form-control'}),
+            'mid_event_image': forms.FileInput(attrs={'class': 'form-control'}),
+            'post_event_image': forms.FileInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Phone'}),
+            'image': forms.FileInput(attrs={'class': 'form-control'}),
+        }
 '''
 
-class Job_Application_Form(forms.ModelForm):
+'''class GovtEvent_Form(forms.Form):
     class Meta:
-        model = Job_Application
-        exclude = ['date']
-        fields = ['username', 'email', 'phone_number', 'address1', 'address2', 'image']
-    
-    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'username'}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'example@gmail.com'}))
-    phone_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'phone number'}))
-    date = forms.DateField(widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'date'}))
-    address1 = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'address1'}))
-    address2 = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'address2'}))
-    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control'}))
-
-'''
-
-
-class Job_Application_Form(forms.Form):
-    class Meta:
-        model = Job_Application
+        model = GovtEvent
         
     username = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
@@ -33,7 +59,7 @@ class Job_Application_Form(forms.Form):
     address1 = models.TextField(max_length=300)  
     address2 = models.TextField(max_length=300) 
     pdf_file = models.FileField(upload_to='pdfs/')
-    gender = models.CharField(max_length=10)
+    gender = models.CharField(max_length=10)'''
     
 class Login_Form(AuthenticationForm):
     
